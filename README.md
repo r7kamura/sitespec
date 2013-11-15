@@ -15,6 +15,7 @@ require "sitespec"
 Sitespec.configure do
   self.application = MyRackApplication.new
   self.build_path = "build"
+  self.raise_http_error = true
 end
 
 describe "Sitespec" do

@@ -1,5 +1,6 @@
 require "sitespec/builder"
 require "sitespec/configuration"
+require "sitespec/error"
 require "sitespec/request"
 require "sitespec/response"
 require "sitespec/version"

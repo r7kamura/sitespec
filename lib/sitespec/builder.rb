@@ -13,7 +13,11 @@ module Sitespec
     end
 
     def call
-      Sitespec.configuration.application.call(@request.env)
+      Sitespec.configuration.application.call(@request.env).tap do |status, header, body|
+        if Sitespec.configuration.raise_http_error && status >= 400
+          raise Error, "#{@request.uri} returned #{status}"
+        end
+      end
     end
   end
 end

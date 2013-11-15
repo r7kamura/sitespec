@@ -8,5 +8,9 @@ module Sitespec
     get "/index.html" do
       slim :index
     end
+
+    get "/:year-:month-:day-:title.html" do
+      slim :show
+    end
   end
 end
