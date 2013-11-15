@@ -3,6 +3,7 @@ require "sitespec/configuration"
 require "sitespec/request"
 require "sitespec/response"
 require "sitespec/version"
+require "sitespec/writer"
 
 module Sitespec
   def self.configuration

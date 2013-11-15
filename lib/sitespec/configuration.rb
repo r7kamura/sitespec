@@ -5,7 +5,7 @@ module Sitespec
     attr_accessor :application, :build_path
 
     def initialize
-      @build_path = Pathname.new("build")
+      @build_path = "build"
     end
   end
 end

@@ -8,7 +8,7 @@ describe Sitespec do
   end
 
   it "generates static files from rack application" do
-    get "/"
+    get "/index.html"
     response.status.should == 200
   end
 end

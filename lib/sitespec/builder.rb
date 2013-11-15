@@ -9,7 +9,7 @@ module Sitespec
     end
 
     def build
-      Response.new(*call)
+      Response.new(*call).tap {|response| Writer.write(@request, response) }
     end
 
     def call
