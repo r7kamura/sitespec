@@ -1,5 +1,3 @@
-require "pathname"
-
 module Sitespec
   class Configuration
     attr_accessor :application, :build_path, :raise_http_error
