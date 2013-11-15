@@ -17,10 +17,10 @@ Sitespec.configure do
   self.build_path = "build"
 end
 
-describe "Static site generation" do
+describe "Sitespec" do
   include Sitespec
 
-  it "generates static files from rack application" do
+  it "generates static site from your rack application & spec definition" do
     get "/stylesheets/all.css"
     get "/images/favicon.ico"
     get "/index.html"
@@ -34,8 +34,8 @@ end
 ```sh
 # shell-command
 $ rspec
-Static site generation
-  generates static files from rack application
+Sitespec
+  generates static site from your rack application & spec definition
 
 Finished in 0.00151 seconds
 1 example, 0 failures
