@@ -9,14 +9,13 @@ gem install sitespec
 
 ## Usage
 ```ruby
-# spec/spec_helper.rb
-require "sitespec"
-Sitespec.application = MyRackApplication.new
-```
-
-```ruby
 # spec/your_spec.rb
-require "spec_helper"
+require "sitespec"
+
+Sitespec.configure do
+  self.application = MyRackApplication.new
+  self.build_path = "build"
+end
 
 describe "Static site generation" do
   include Sitespec
