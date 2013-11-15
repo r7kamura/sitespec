@@ -1,29 +1,30 @@
 # Sitespec
-
-TODO: Write a gem description
+Generate static site from your spec.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'sitespec'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install sitespec
+```
+gem install sitespec
+```
 
 ## Usage
+```ruby
+# spec/spec_helper.rb
+require "sitespec"
+Sitespec.application = MyRackApplication.new
+```
 
-TODO: Write usage instructions here
+```ruby
+# spec/your_spec.rb
+require "spec_helper"
 
-## Contributing
-
-1. Fork it ( http://github.com/<my-github-username>/sitespec/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+describe "Static site generation" do
+  it "generates static files from rack application" do
+    get "/stylesheets/all.css"
+    get "/images/favicon.ico"
+    get "/index.html"
+    get "/2000/01/01/hello.md"
+    get "/2000/01/02/world.md"
+    get "/feed.xml"
+  end
+end
+```
