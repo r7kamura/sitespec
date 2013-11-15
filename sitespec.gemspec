@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = Sitespec::VERSION
   spec.authors       = ["Ryo Nakamura"]
   spec.email         = ["r7kamura@gmail.com"]
-  spec.summary       = "Generate static site from your spec"
+  spec.summary       = "Generate static site from your rack application & spec definition"
   spec.homepage      = "https://github.com/r7kamura/sitespec"
   spec.license       = "MIT"
 
