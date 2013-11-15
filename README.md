@@ -33,5 +33,21 @@ end
 
 ```sh
 # shell-command
-rspec
+$ rspec
+Static site generation
+  generates static files from rack application
+
+Finished in 0.00151 seconds
+1 example, 0 failures
+
+# the following files are generated
+$ tree
+.
+`-- build
+    |-- stylesheets/all.css
+    |-- images/favicon.ico
+    |-- index.html
+    |-- 2000/01/01/hello.html
+    |-- 2000/01/02/world.html
+    `-- feed.xml
 ```
