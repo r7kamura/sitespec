@@ -15,7 +15,7 @@ module Sitespec
         "HTTPS" => https? ? "on" : "off",
         "HTTP_HOST" => uri.host,
         "PATH_INFO" => uri.path,
-        "QUERY_STRING" => uri.query,
+        "QUERY_STRING" => uri.query || "",
         "REQUEST_METHOD" => @method.to_s.upcase,
         "REQUEST_URI" => uri.to_s,
         "SERVER_NAME" => uri.hostname,
