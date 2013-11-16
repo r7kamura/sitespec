@@ -1,6 +1,11 @@
 # Sitespec
 Generate static site from your rack application & spec definition.
 
+## Features
+* Provides the same way to create both dynamic & static website
+* Generates static website from your existing dynamic website
+* Sitespec can be executable specification, good documentation, and well-tested implementation
+
 ## Installation
 ```sh
 # shell-command
