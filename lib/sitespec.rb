@@ -1,18 +1,28 @@
 require "sitespec/builder"
 require "sitespec/configuration"
 require "sitespec/error"
+require "sitespec/formatter"
 require "sitespec/request"
 require "sitespec/response"
 require "sitespec/version"
 require "sitespec/writer"
+require "sitespec/initialize"
 
 module Sitespec
-  def self.configuration
-    @configuration ||= Configuration.new
-  end
+  class << self
+    attr_writer :build_count
 
-  def self.configure(&block)
-    configuration.instance_eval(&block)
+    def configuration
+      @configuration ||= Configuration.new
+    end
+
+    def configure(&block)
+      configuration.instance_eval(&block)
+    end
+
+    def build_count
+      @build_count ||= 0
+    end
   end
 
   module_function

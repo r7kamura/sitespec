@@ -27,12 +27,12 @@ describe "Sitespec" do
   include Sitespec
 
   it "generates static site from your rack application & spec definition" do
-    get "/stylesheets/all.css"
-    get "/images/favicon.ico"
-    get "/index.html"
     get "/2000/01/01/hello.html"
     get "/2000/01/02/world.html"
     get "/feed.xml"
+    get "/images/favicon.ico"
+    get "/index.html"
+    get "/stylesheets/all.css"
   end
 end
 ```
@@ -40,20 +40,14 @@ end
 ```sh
 # shell-command
 $ rspec
-Sitespec
-  generates static site from your rack application & spec definition
+Build started...
 
-Finished in 0.00151 seconds
-1 example, 0 failures
+✔ 2000/01/01/hello.html
+✔ 2000/01/02/world.html
+✔ feed.xml
+✔ images/favicon.ico
+✔ index.html
+✔ stylesheets/all.css
 
-# the following files are generated
-$ tree
-.
-`-- build
-    |-- stylesheets/all.css
-    |-- images/favicon.ico
-    |-- index.html
-    |-- 2000/01/01/hello.html
-    |-- 2000/01/02/world.html
-    `-- feed.xml
+Build finished with 6 files in 0.00151 seconds.
 ```

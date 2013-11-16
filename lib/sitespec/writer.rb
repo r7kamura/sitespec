@@ -23,7 +23,18 @@ module Sitespec
     end
 
     def create
-      path.open("w") {|file| file << @response.body }
+      path.open("w") {|file| file << @response.body }.tap do
+        puts "#{color(?✔)} #{path}"
+        Sitespec.build_count += 1
+      end
+    end
+
+    def color(text)
+      RSpec.configuration.color_enabled? ? "\e[32m#{text}\e[0m" : text
+    end
+
+    def puts(text)
+      RSpec.configuration.formatters[0].output.puts text
     end
   end
 end
