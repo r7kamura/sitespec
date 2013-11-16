@@ -1,3 +1,6 @@
+## 0.0.3
+* Fix rspec gem dependency
+
 ## 0.0.2
 * Pretty RSpec formatter
 
