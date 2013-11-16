@@ -1,3 +1,4 @@
+# coding: utf-8
 module Sitespec
   class Writer
     def self.write(*args)
