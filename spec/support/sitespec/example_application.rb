@@ -11,6 +11,8 @@ module Sitespec
     set :show_exceptions, false
     set :slim, pretty: true
 
+    disable :logging
+
     error do |exception|
       raise exception
     end
