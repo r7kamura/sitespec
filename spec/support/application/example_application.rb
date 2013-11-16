@@ -1,4 +1,5 @@
 require "padrino"
+require "redcarpet"
 require "sass"
 require "slim"
 
@@ -13,10 +14,6 @@ module Sitespec
 
     disable :logging
 
-    error do |exception|
-      raise exception
-    end
-
     get "/stylesheets/all.css" do
       scss :all
     end
@@ -26,7 +23,25 @@ module Sitespec
     end
 
     get "/:year-:month-:day-:title.html" do
-      slim :show
+      slim :show, locals: { body: article }
+    end
+
+    helpers do
+      def article
+        markdown(article_path.to_sym, views: articles_path)
+      end
+
+      def articles_path
+        "#{settings.root}/articles"
+      end
+
+      def article_path
+        "#{params[:year]}-#{params[:month]}-#{params[:day]}-#{params[:title]}"
+      end
+    end
+
+    error do |exception|
+      raise exception
     end
   end
 end
