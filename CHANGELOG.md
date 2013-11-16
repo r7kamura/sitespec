@@ -1,3 +1,6 @@
+## 0.0.4
+* Support Ruby 1.9.x
+
 ## 0.0.3
 * Fix rspec gem dependency
 
