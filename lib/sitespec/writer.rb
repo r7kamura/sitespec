@@ -11,7 +11,7 @@ module Sitespec
 
     def write
       mkpath
-      create
+      create_with_output_and_build_count
     end
 
     def path
@@ -23,10 +23,15 @@ module Sitespec
     end
 
     def create
-      path.open("w") {|file| file << @response.body }.tap do
-        puts "#{color(?✔)} #{path}"
-        Sitespec.build_count += 1
-      end
+      path.open("w") {|file| file << @response.body }
+    end
+
+    def create_with_output
+      create.tap { puts "#{color(?✔)} #{path}" }
+    end
+
+    def create_with_output_and_build_count
+      create_with_output.tap { Sitespec.build_count += 1 }
     end
 
     def color(text)
