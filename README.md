@@ -51,3 +51,6 @@ Build started...
 
 Build finished with 6 files in 0.00151 seconds.
 ```
+
+## Example
+[r7kamura/r7kamura.github.io](https://github.com/r7kamura/r7kamura.github.io) is powered by sitespec.
