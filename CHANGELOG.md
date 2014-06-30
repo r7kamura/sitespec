@@ -1,3 +1,6 @@
+## 0.0.5
+* Fix dependent RSpec version
+
 ## 0.0.4
 * Support Ruby 1.9.x
 
