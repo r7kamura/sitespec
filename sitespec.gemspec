@@ -10,11 +10,11 @@ Gem::Specification.new do |spec|
   spec.summary       = "Generate static site from your rack application & spec definition"
   spec.homepage      = "https://github.com/r7kamura/sitespec"
   spec.license       = "MIT"
-
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+  spec.required_ruby_version = ">= 2.0.0"
 
   spec.add_dependency "rack-test"
   spec.add_dependency "rspec", ">= 3.0.0"
