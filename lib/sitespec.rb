@@ -4,6 +4,12 @@ require "sitespec/version"
 
 module Sitespec
   class << self
+    attr_writer :artifacts_count
+
+    def artifacts_count
+      @artifacts_count || 0
+    end
+
     # Provide singleton configuration object shared with the current process.
     # @example
     #   Sitespec.configuration.build_path = "artifacts"

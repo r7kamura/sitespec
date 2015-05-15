@@ -11,4 +11,10 @@ RSpec.configure do |config|
   config.after do |example|
     Sitespec::Artifact.create(example: example, example_group: self)
   end
+
+  config.after(:suite) do
+    if Sitespec.artifacts_count > 0
+      puts "\nSitespec generated #{Sitespec.artifacts_count} files into #{Sitespec.configuration.build_path} directory."
+    end
+  end
 end

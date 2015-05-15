@@ -29,6 +29,7 @@ module Sitespec
     def save
       if valid?
         write
+        count_up
         true
       else
         false
@@ -36,6 +37,10 @@ module Sitespec
     end
 
     private
+
+    def count_up
+      Sitespec.artifacts_count += 1
+    end
 
     # Utility method to access to `@example`
     def example
