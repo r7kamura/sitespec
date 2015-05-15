@@ -60,6 +60,8 @@ Example application
   GET /stylesheets/all.css
     returns 200
 
+Sitespec generated 3 files into build directory.
+
 Finished in 0.08302 seconds (files took 0.79161 seconds to load)
 3 examples, 0 failures
 ```
