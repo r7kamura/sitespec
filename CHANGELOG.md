@@ -1,3 +1,6 @@
+## 1.1.0
+- Add auto_complete_html_path configuration (default: true)
+
 ## 1.0.0
 - Renewal with Ruby 2, RSpec 3, and rack-test
 
