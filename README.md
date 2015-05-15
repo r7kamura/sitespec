@@ -1,5 +1,5 @@
 # Sitespec
-Generate static site from your rack application & spec definition.
+Generate static site from your rack application & test files.
 
 * Provides the same way to create both dynamic & static website
 * Generates static website from your existing dynamic website
