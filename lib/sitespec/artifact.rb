@@ -60,9 +60,28 @@ module Sitespec
       pathname.parent.mkpath
     end
 
-    # @return [Pathname] Where to an artifact file is located
+    # @return [String] Where to an artifact file is located
+    def path
+      File.join(Sitespec.configuration.build_pathname, request.path) + path_suffix
+    end
+
+    # @return [String]
+    def path_suffix
+      case
+      when !Sitespec.configuration.auto_complete_html_path
+        ""
+      when response.content_type.nil? || !response.content_type.include?("text/html") || request.path.end_with?(".html")
+        ""
+      when request.path == "/"
+        "index.html"
+      else
+        ".html"
+      end
+    end
+
+    # @return [Pathname]
     def pathname
-      Pathname.new(File.join(Sitespec.configuration.build_pathname, request.path))
+      Pathname.new(path)
     end
 
     # @note We expect `request` is provided via rack-test

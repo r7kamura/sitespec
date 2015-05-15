@@ -4,10 +4,15 @@ module Sitespec
   class Configuration
     DEFAULT_BUILD_PATH = "build"
 
-    attr_writer :build_path
+    attr_writer :auto_complete_html_path, :build_path
 
     def initialize
       @enabled = true
+      @auto_complete_html_path = true
+    end
+
+    def auto_complete_html_path
+      !!@auto_complete_html_path
     end
 
     def build_path

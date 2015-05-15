@@ -65,6 +65,7 @@ Finished in 0.08302 seconds (files took 0.79161 seconds to load)
 ```
 
 ## Configuration
+- `Sitespec.configuration.auto_complete_html_path` - Flag to autocomplete .html (default: `true`)
 - `Sitespec.configuration.build_path` - Where to locate files (default: `"build"`)
 - `Sitespec.configuration.enabled` - Flag to enable sitespec (default: `true`)
 

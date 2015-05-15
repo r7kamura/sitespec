@@ -18,11 +18,11 @@ module Sitespec
       scss :all
     end
 
-    get "/index.html" do
+    get "/" do
       slim :index
     end
 
-    get "/:year-:month-:day-:title.html" do
+    get "/:year-:month-:day-:title" do
       slim :show, locals: { body: article }
     end
 

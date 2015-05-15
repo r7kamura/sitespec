@@ -6,8 +6,8 @@ describe "Example application" do
   end
 
   %w[
-    /2000-01-01-hello.html
-    /index.html
+    /
+    /2000-01-01-hello
     /stylesheets/all.css
   ].each do |path|
     describe "GET #{path}", :sitespec do
