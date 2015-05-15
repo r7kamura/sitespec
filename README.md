@@ -6,19 +6,19 @@ Generate static site from your rack application & test files.
 * Sitespec can be executable specification, good documentation, and well-tested implementation
 
 ## Usage
-### Add sitespec into your Gemfile
+### 1. Add sitespec into your Gemfile
 ```rb
 # Gemfile
 gem "sitespec"
 ```
 
-### Require sitespec/rspec in your specs
+### 2. Require sitespec/rspec in your specs
 ```rb
 # spec/spec_helper.rb
 require "sitespec/rspec"
 ```
 
-### Write request-specs with `:sitespec` metadata
+### 3. Write request-specs with `:sitespec` metadata
 Note: [rack/test](https://github.com/brynary/rack-test) is automatically enabled
 in the example groups that have `:sitespec`.
 
@@ -46,7 +46,7 @@ describe "Sitespec" do
 end
 ```
 
-### Run rspec to build static files
+### 4. Run rspec to build static files
 Note: only successful examples generate static files.
 
 ```
