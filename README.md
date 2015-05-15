@@ -30,11 +30,8 @@ describe "Sitespec" do
   end
 
   %w[
-    /2000/01/01/hello.html
-    /2000/01/02/world.html
-    /feed.xml
-    /images/favicon.ico
-    /index.html
+    /
+    /2000/01/01/hello
     /stylesheets/all.css
   ].each do |path|
     describe "GET #{path}", :sitespec do
@@ -53,9 +50,9 @@ Note: only successful examples generate static files.
 $ bundle exec rspec
 
 Example application
-  GET /2000-01-01-hello.html
+  GET /
     returns 200
-  GET /index.html
+  GET /2000/01/01/hello
     returns 200
   GET /stylesheets/all.css
     returns 200
