@@ -29,7 +29,7 @@ module Sitespec
     def save
       if valid?
         write
-        count_up
+        increment
         true
       else
         false
@@ -37,10 +37,6 @@ module Sitespec
     end
 
     private
-
-    def count_up
-      Sitespec.artifacts_count += 1
-    end
 
     # Utility method to access to `@example`
     def example
@@ -54,6 +50,10 @@ module Sitespec
 
     def generate_file
       pathname.write(response.body)
+    end
+
+    def increment
+      Sitespec.increment_artifacts_count
     end
 
     def make_parent_directory
