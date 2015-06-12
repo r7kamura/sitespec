@@ -72,7 +72,7 @@ module Sitespec
         ""
       when response.content_type.nil? || !response.content_type.include?("text/html") || request.path.end_with?(".html")
         ""
-      when request.path == "/"
+      when request.path.end_with?("/")
         "index.html"
       else
         ".html"
