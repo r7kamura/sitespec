@@ -1,3 +1,6 @@
+## 1.2.0
+- Allow users to generate index.html by putting trailing slash
+
 ## 1.1.0
 - Add auto_complete_html_path configuration (default: true)
 
