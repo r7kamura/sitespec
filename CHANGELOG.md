@@ -1,3 +1,6 @@
+## 1.2.1
+- Use request.path_info instead of request.path
+
 ## 1.2.0
 - Allow users to generate index.html by putting trailing slash
 
