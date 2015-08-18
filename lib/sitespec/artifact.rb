@@ -62,7 +62,7 @@ module Sitespec
 
     # @return [String] Where to an artifact file is located
     def path
-      File.join(Sitespec.configuration.build_pathname, request.path) + path_suffix
+      File.join(Sitespec.configuration.build_pathname, request.path_info) + path_suffix
     end
 
     # @return [String]
@@ -70,9 +70,9 @@ module Sitespec
       case
       when !Sitespec.configuration.auto_complete_html_path
         ""
-      when response.content_type.nil? || !response.content_type.include?("text/html") || request.path.end_with?(".html")
+      when response.content_type.nil? || !response.content_type.include?("text/html") || request.path_info.end_with?(".html")
         ""
-      when request.path.end_with?("/")
+      when request.path_info.end_with?("/")
         "index.html"
       else
         ".html"
