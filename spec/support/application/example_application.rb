@@ -15,7 +15,8 @@ module Sitespec
     disable :logging
 
     get "/stylesheets/all.css" do
-      scss :all
+      content_type :css
+      render :scss, :all, layout: false
     end
 
     get "/" do
